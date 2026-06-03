@@ -1,0 +1,103 @@
+import { ref, type Ref } from "../utils.js";
+
+type BrandMap = Record<string, Record<string, Ref>>;
+
+/**
+ * Surfaces tokens into Tailwind v4's `@theme` namespaces so utility classes
+ * (`bg-surface`, `text-text-muted`, `rounded-md`, `p-4`, etc.) resolve to
+ * Plinth tokens. Keys here become Tailwind theme variable suffixes.
+ */
+export const brand: BrandMap = {
+  color: {
+    white: ref("primitive.color.white"),
+    black: ref("primitive.color.black"),
+    "blue-50": ref("primitive.color.blue.50"),
+    "blue-100": ref("primitive.color.blue.100"),
+    "blue-200": ref("primitive.color.blue.200"),
+    "blue-300": ref("primitive.color.blue.300"),
+    "blue-400": ref("primitive.color.blue.400"),
+    "blue-500": ref("primitive.color.blue.500"),
+    "blue-600": ref("primitive.color.blue.600"),
+    "blue-700": ref("primitive.color.blue.700"),
+    "blue-800": ref("primitive.color.blue.800"),
+    "blue-900": ref("primitive.color.blue.900"),
+    "blue-950": ref("primitive.color.blue.950"),
+    "gray-50": ref("primitive.color.gray.50"),
+    "gray-100": ref("primitive.color.gray.100"),
+    "gray-200": ref("primitive.color.gray.200"),
+    "gray-300": ref("primitive.color.gray.300"),
+    "gray-400": ref("primitive.color.gray.400"),
+    "gray-500": ref("primitive.color.gray.500"),
+    "gray-600": ref("primitive.color.gray.600"),
+    "gray-700": ref("primitive.color.gray.700"),
+    "gray-800": ref("primitive.color.gray.800"),
+    "gray-900": ref("primitive.color.gray.900"),
+    "gray-950": ref("primitive.color.gray.950"),
+    surface: ref("semantic.color.surface"),
+    "surface-muted": ref("semantic.color.surfaceMuted"),
+    "surface-raised": ref("semantic.color.surfaceRaised"),
+    text: ref("semantic.color.text"),
+    "text-muted": ref("semantic.color.textMuted"),
+    "text-inverse": ref("semantic.color.textInverse"),
+    border: ref("semantic.color.border"),
+    "border-strong": ref("semantic.color.borderStrong"),
+    interactive: ref("semantic.color.interactive"),
+    "interactive-hover": ref("semantic.color.interactiveHover"),
+    "interactive-text": ref("semantic.color.interactiveText"),
+  },
+  spacing: {
+    0: ref("primitive.space.0"),
+    1: ref("primitive.space.1"),
+    2: ref("primitive.space.2"),
+    3: ref("primitive.space.3"),
+    4: ref("primitive.space.4"),
+    5: ref("primitive.space.5"),
+    6: ref("primitive.space.6"),
+    8: ref("primitive.space.8"),
+    10: ref("primitive.space.10"),
+    12: ref("primitive.space.12"),
+    16: ref("primitive.space.16"),
+    20: ref("primitive.space.20"),
+    24: ref("primitive.space.24"),
+  },
+  radius: {
+    none: ref("primitive.radius.none"),
+    sm: ref("primitive.radius.sm"),
+    md: ref("primitive.radius.md"),
+    lg: ref("primitive.radius.lg"),
+    xl: ref("primitive.radius.xl"),
+    "2xl": ref("primitive.radius.2xl"),
+    full: ref("primitive.radius.full"),
+  },
+  shadow: {
+    sm: ref("primitive.shadow.sm"),
+    md: ref("primitive.shadow.md"),
+    lg: ref("primitive.shadow.lg"),
+    xl: ref("primitive.shadow.xl"),
+  },
+  font: {
+    sans: ref("primitive.typography.fontFamily.sans"),
+    mono: ref("primitive.typography.fontFamily.mono"),
+  },
+  text: {
+    xs: ref("primitive.typography.fontSize.xs"),
+    sm: ref("primitive.typography.fontSize.sm"),
+    base: ref("primitive.typography.fontSize.base"),
+    lg: ref("primitive.typography.fontSize.lg"),
+    xl: ref("primitive.typography.fontSize.xl"),
+    "2xl": ref("primitive.typography.fontSize.2xl"),
+    "3xl": ref("primitive.typography.fontSize.3xl"),
+    "4xl": ref("primitive.typography.fontSize.4xl"),
+  },
+  "font-weight": {
+    regular: ref("primitive.typography.fontWeight.regular"),
+    medium: ref("primitive.typography.fontWeight.medium"),
+    semibold: ref("primitive.typography.fontWeight.semibold"),
+    bold: ref("primitive.typography.fontWeight.bold"),
+  },
+  leading: {
+    tight: ref("primitive.typography.lineHeight.tight"),
+    normal: ref("primitive.typography.lineHeight.normal"),
+    relaxed: ref("primitive.typography.lineHeight.relaxed"),
+  },
+};
