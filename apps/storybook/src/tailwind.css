@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@plinth/tokens/css/primitive";
+@import "@plinth/tokens/css/semantic";
+@import "@plinth/tokens/css/brand";
+
+html,
+body,
+#storybook-root {
+  background-color: var(--plinth-semantic-color-surface);
+  color: var(--plinth-semantic-color-text);
+  font-family: var(--plinth-primitive-typography-font-family-sans);
+}

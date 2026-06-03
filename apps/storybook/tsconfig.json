@@ -1,0 +1,9 @@
+{
+  "extends": "@plinth/tsconfig/react-lib.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["vite/client"]
+  },
+  "include": ["src/**/*", ".storybook/**/*"],
+  "exclude": ["node_modules", "storybook-static"]
+}

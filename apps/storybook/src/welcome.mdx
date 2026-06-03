@@ -1,0 +1,159 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Welcome" />
+
+# Plinth
+
+A design system built on solid foundations. Tokens, components, and
+documentation for building consistent, accessible UI at scale.
+
+This Storybook is the working surface — every token, every component, every
+state lives here.
+
+## Three-layer tokens
+
+Plinth tokens flow through three layers. Each layer is generated as a
+separate CSS file; the brand layer registers tokens with Tailwind v4 so
+utility classes like `bg-surface` resolve through the chain.
+
+### Primitive — raw values
+
+<div className="grid grid-cols-11 gap-1 my-4">
+  {[
+    "50",
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
+    "950",
+  ].map((step) => (
+    <div key={`blue-${step}`} className="flex flex-col items-center">
+      <div
+        style={{
+          background: `var(--plinth-primitive-color-blue-${step})`,
+          height: "48px",
+          width: "100%",
+          borderRadius: "var(--plinth-primitive-radius-md)",
+          border: "1px solid var(--plinth-semantic-color-border)",
+        }}
+      />
+      <span
+        style={{
+          fontSize: "var(--plinth-primitive-typography-font-size-xs)",
+          color: "var(--plinth-semantic-color-text-muted)",
+          marginTop: "0.25rem",
+        }}
+      >
+        blue-{step}
+      </span>
+    </div>
+  ))}
+</div>
+
+<div className="grid grid-cols-11 gap-1 my-4">
+  {[
+    "50",
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
+    "950",
+  ].map((step) => (
+    <div key={`gray-${step}`} className="flex flex-col items-center">
+      <div
+        style={{
+          background: `var(--plinth-primitive-color-gray-${step})`,
+          height: "48px",
+          width: "100%",
+          borderRadius: "var(--plinth-primitive-radius-md)",
+          border: "1px solid var(--plinth-semantic-color-border)",
+        }}
+      />
+      <span
+        style={{
+          fontSize: "var(--plinth-primitive-typography-font-size-xs)",
+          color: "var(--plinth-semantic-color-text-muted)",
+          marginTop: "0.25rem",
+        }}
+      >
+        gray-{step}
+      </span>
+    </div>
+  ))}
+</div>
+
+### Semantic — role-based aliases
+
+<div className="grid grid-cols-4 gap-4 my-4">
+  {[
+    { name: "surface", role: "page background" },
+    { name: "surface-muted", role: "subdued background" },
+    { name: "text", role: "primary text" },
+    { name: "text-muted", role: "secondary text" },
+    { name: "border", role: "default border" },
+    { name: "border-strong", role: "emphasized border" },
+    { name: "interactive", role: "default action" },
+    { name: "interactive-hover", role: "action on hover" },
+  ].map(({ name, role }) => (
+    <div
+      key={name}
+      style={{
+        padding: "1rem",
+        borderRadius: "var(--plinth-primitive-radius-lg)",
+        border: "1px solid var(--plinth-semantic-color-border)",
+        background: "var(--plinth-semantic-color-surface-raised)",
+      }}
+    >
+      <div
+        style={{
+          background: `var(--plinth-semantic-color-${name})`,
+          height: "32px",
+          borderRadius: "var(--plinth-primitive-radius-sm)",
+          marginBottom: "0.5rem",
+          border: "1px solid var(--plinth-semantic-color-border)",
+        }}
+      />
+      <div
+        style={{
+          fontSize: "var(--plinth-primitive-typography-font-size-sm)",
+          fontWeight: "var(--plinth-primitive-typography-font-weight-semibold)",
+        }}
+      >
+        {name}
+      </div>
+      <div
+        style={{
+          fontSize: "var(--plinth-primitive-typography-font-size-xs)",
+          color: "var(--plinth-semantic-color-text-muted)",
+        }}
+      >
+        {role}
+      </div>
+    </div>
+  ))}
+</div>
+
+### Brand — Tailwind utilities
+
+The brand layer surfaces semantic tokens to Tailwind v4's `@theme`, so any
+consumer can write `bg-surface`, `text-text-muted`, or `border-border-strong`
+and resolve to live token values.
+
+<div className="flex gap-2 my-4">
+  <button className="bg-interactive text-interactive-text px-4 py-2 rounded-md font-medium">
+    bg-interactive
+  </button>
+  <button className="bg-surface-muted text-text border border-border px-4 py-2 rounded-md font-medium">
+    bg-surface-muted
+  </button>
+</div>
