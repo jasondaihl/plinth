@@ -3,6 +3,8 @@
 @import "@plinth/tokens/css/semantic";
 @import "@plinth/tokens/css/brand";
 
+@source "../../../packages/components/src/**/*.{ts,tsx}";
+
 html,
 body,
 #storybook-root {
